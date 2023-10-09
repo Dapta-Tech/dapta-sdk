@@ -1,7 +1,3 @@
-import { Request, Headers } from "node-fetch";
-import fetch from "node-fetch";
-
-export const Greeter = (name: string) => `Hello ${name}`;
 export class DaptaSdk {
   apiKey: string | undefined;
   /**
