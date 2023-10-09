@@ -44,7 +44,7 @@ export class DaptaSdk {
       };
 
       if (apiBody) {
-        options.body = apiBody;
+        options.body = JSON.stringify(apiBody);
       }
 
       const urlParsed = new URL(
