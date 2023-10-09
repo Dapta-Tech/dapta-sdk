@@ -1,7 +1,7 @@
 import { Request, Headers } from "node-fetch";
 import fetch from "node-fetch";
 
-class Dapta {
+module.exports = class Dapta {
   /**
    * @param {string} apiKey Dapta API key
    */
@@ -10,14 +10,14 @@ class Dapta {
   }
 
   /**
-   * @param {string} urlEndPoint Dapta API Url Endpoint
+   * @param {string} urlEndpoint Dapta API Url Endpoint
    * @param {string} method Fetch type (GET, POST, PUT or DELETE)
    * @param {any} apiheaders Fetch Headers object
    * @param {any} apiBody Fetch Body Object
-   * @param {any} queryParams Url query params object
+   * @param {string} queryParams Url query params object
    * @returns {any}
    */
-  async executeDaptaCall(urlEndPoint, method, apiheaders, apiBody, queryParams) {
+  async executeDaptaCall(urlEndpoint, method, apiheaders, apiBody, queryParams) {
     try {
       let headers = new Headers();
       headers.append("Content-Type", "application/json");
@@ -44,18 +44,15 @@ class Dapta {
       }
 
       const urlParsed = new URL(
-        (urlEndPoint.replace("'", "") + (queryParams ? new URLSearchParams(queryParams) : ''))
+        (urlEndpoint + (queryParams ? new URLSearchParams(queryParams) : ''))
       );
       const request = new Request(urlParsed, options);
       const resFetch = await fetch(request);
       const body = await resFetch.json();
 
-      return res.status(200).json(body);
+      return body;
     } catch (error) {
-      console.error(error);
-      return res.status(500).json({ error: error.message });
+      throw new Error(error);
     }
   }
 }
-
-export default Dapta;
