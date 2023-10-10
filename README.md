@@ -15,7 +15,7 @@ npm install dapta-sdk
 // Import DaptaSdk class
 import { DaptaSdk } from 'dapta-sdk';
 
-// Initialize a DaptaSdk object instance with your D base url and your api 
+// Initialize a DaptaSdk object instance with your Dapta API base url and your api key
 const baseUrl: string = 'https://example.your-api-url.com/v1/api/example/';
 const apiKey: string = 'your-key';
 const daptaSdk = new DaptaSdk(baseUrl, apiKey);
