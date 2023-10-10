@@ -12,8 +12,8 @@ export class DaptaSdk {
    * @param {string} method Fetch type (GET, POST, PUT or DELETE)
    * @param {any} apiheaders Fetch Headers object
    * @param {any} apiBody Fetch Body Object
-   * @param {string} queryParams Url query params object
-   * @returns {any}
+   * @param {any} queryParams Object that contains query params for Url
+   * @returns {string}
    */
   async executeDaptaCall(
     urlEndpoint: string,
@@ -48,12 +48,11 @@ export class DaptaSdk {
       }
 
       const urlParsed = new URL(
-        (urlEndpoint + (queryParams ? new URLSearchParams(queryParams) : ''))
+        (urlEndpoint + (queryParams ? ('?' + new URLSearchParams(queryParams).toString()) : ''))
       );
       const request = new Request(urlParsed, options);
       const resFetch = await fetch(request);
       const body = await resFetch.json();
-
       return body;
     } catch (error: any) {
       throw new Error(error);
