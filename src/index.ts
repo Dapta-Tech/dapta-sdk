@@ -2,7 +2,7 @@ export class DaptaSdk {
   apiBaseUrl: string;
   apiKey: string | undefined;
   /**
-   * @param {string} apiBaseUrl Dapta API base url, remeber to add an '/' at the end.
+   * @param {string} apiBaseUrl Dapta API base url, remember to add an '/' at the end.
    * @param {string} apiKey Dapta API key.
    */
   constructor(apiBaseUrl: string, apiKey: string | undefined) {
@@ -13,10 +13,10 @@ export class DaptaSdk {
   /**
    * @param {string} urlEndpoint Dapta API url endpoint complement.
    * @param {string} method Fetch type (GET, POST, PUT or DELETE).
-   * @param {any} apiheaders Fetch Headers object.
-   * @param {any} apiBody Fetch Body object.
-   * @param {any} pathParams Object that contains url path params.
-   * @param {any} queryParams Object that contains query params for url.
+   * @param {any} apiheaders Fetch Headers object. The following Headers are already included: 'Content-Type', 'Accept', 'x-api-key'.
+   * @param {any} apiBody Fetch Body object. Leave it undefined if you don't need it.
+   * @param {any} pathParams Object that contains url path params. Leave it undefined if you don't need it.
+   * @param {any} queryParams Object that contains query params for url. Leave it undefined if you don't need it.
    * @returns {any} Fetch response.
    */
   async executeDaptaCall(

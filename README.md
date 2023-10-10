@@ -24,13 +24,13 @@ const daptaSdk = new DaptaSdk(baseUrl, apiKey);
 daptaSdk.executeDaptaCall(
     'endpoint', // Url endpoint (Required).
     'method', // Fetch Method: GET, POST, PUT or DELETE (Required).
-    { header1: 'value', header2: 'value', header3: 'value',...} // Fetch headers object (Optional).
+    { header1: 'value', header2: 'value', header3: 'value',...} // Fetch headers object (Optional). The following Headers are already included: 'Content-Type', 'Accept', 'x-api-key'.
     { bodyKey1: 'value', bodyKey2: 'value', bodyKey3: 'value'... } // Fetch body object (Optional).
     { pathParam1: 'value', pathParam2: 'value', pathParam3: 'value',... } // Url path params object (Optional).
     { queryParam1: 'value', queryParam2: 'value', queryParam3: 'value',... } // Url query params object (Optional).
-).then((value) => {
+).then((response) => {
     // Returns fetch response
-    console.log("RESPONSE: ", value)
+    console.log("RESPONSE: ", response)
 }).catch((error) => {
     console.error(error);
 });
