@@ -1,25 +1,30 @@
 {
   "name": "dapta-sdk",
   "version": "1.0.0",
-  "description": "Dapta library",
-  "main": "index.js",
+  "description": "A library to implement your Dapta API's in FrontEnd with TypeScript.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Dapta-Tech/dapta-sdk.git"
   },
   "keywords": [
-    "dapta"
+    "dapta", "sdk", "typescript", "frontend"
   ],
-  "author": "",
+  "author": "Dapta",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Dapta-Tech/dapta-sdk/issues"
   },
   "homepage": "https://github.com/Dapta-Tech/dapta-sdk#readme",
-  "dependencies": {
-    "node-fetch": "^3.3.2"
-  }
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  },
+  "files": [
+    "lib/**/*"
+  ]
 }
