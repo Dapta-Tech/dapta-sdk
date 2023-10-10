@@ -15,7 +15,7 @@ export class DaptaSdk {
    * @param {string} method Fetch type (GET, POST, PUT or DELETE).
    * @param {any} apiheaders Fetch Headers object.
    * @param {any} apiBody Fetch Body object.
-   * @param {any} pathParams object that contains url path params.
+   * @param {any} pathParams Object that contains url path params.
    * @param {any} queryParams Object that contains query params for url.
    * @returns {any} Fetch response.
    */
