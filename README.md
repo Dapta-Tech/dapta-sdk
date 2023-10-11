@@ -1,10 +1,15 @@
+![Dapta](https://i.imgur.com/enqO3Nm.png)
+
 # Welcome to the official Dapta SDK
 
-This repository contains a library that allows an easy implementation of Dapta API's in FrontEnd with TypeScript.
+[Dapta](https://daptatech.com/) is a powerful low-code backend that enables users to deploy and manage APIs with business logic, microservices, and connect multiple data sources to centralize data easily. Create your first API [here](https://app.daptatech.com/register)
+
+This repository contains a library that enables easy and faster connections within front-end projects using TypeScript (React, Angular, Vue, etc.) to APIs created with Dapta
 
 # Installing the SDK
 
 Use the package manager [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) to install Dapta SDK.
+
 ```bash
 npm install dapta-sdk
 ```
