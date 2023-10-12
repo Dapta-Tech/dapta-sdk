@@ -1,4 +1,5 @@
-![Dapta](https://i.imgur.com/enqO3Nm.png)
+
+<img src="https://github.com/Dapta-Tech/dapta-sdk/assets/13544910/87cbe8d7-4057-47c2-afc9-c0cc33ef054d" width="250">
 
 # Welcome to the official Dapta SDK
 
