@@ -1,12 +1,11 @@
 export class DaptaSdk {
-  apiBaseUrl: string;
+  apiBaseUrl: string = 'https://api.dapta.ai/api/';
   apiKey: string | undefined;
   /**
    * @param {string} apiBaseUrl Dapta API base url, remember to add an '/' at the end.
    * @param {string} apiKey Dapta API key.
    */
-  constructor(apiBaseUrl: string, apiKey: string | undefined) {
-    this.apiBaseUrl = apiBaseUrl;
+  constructor(apiKey: string | undefined) {
     this.apiKey = apiKey;
   }
 
@@ -19,7 +18,7 @@ export class DaptaSdk {
    * @param {any} queryParams Object that contains query params for url. Leave it undefined if you don't need it.
    * @returns {any} Fetch response.
    */
-  async executeDaptaCall(
+  async run(
     urlEndpoint: string,
     method: 'GET' | 'POST' | 'PUT' | 'DELETE',
     apiheaders?: any,
