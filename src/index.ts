@@ -2,11 +2,11 @@ export class DaptaSdk {
   apiBaseUrl: string = 'https://api.dapta.ai/api/';
   apiKey: string | undefined;
   /**
-   * @param {string} apiBaseUrl Dapta API base url, remember to add an '/' at the end.
    * @param {string} apiKey Dapta API key.
    */
-  constructor(apiKey: string | undefined) {
+  constructor(apiKey: string | undefined, apiBaseUrl?: string) {
     this.apiKey = apiKey;
+    this.apiBaseUrl = apiBaseUrl || this.apiBaseUrl;
   }
 
   /**
