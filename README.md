@@ -1,4 +1,3 @@
-
 <img src="https://github.com/Dapta-Tech/dapta-sdk/assets/13544910/87cbe8d7-4057-47c2-afc9-c0cc33ef054d" width="250">
 
 # Welcome to the official Dapta SDK
@@ -22,12 +21,11 @@ npm install dapta-sdk
 import { DaptaSdk } from 'dapta-sdk';
 
 // Initialize a DaptaSdk object instance with your Dapta API base url and your api key
-const baseUrl: string = 'https://example.your-api-url.com/v1/api/example/';
 const apiKey: string = 'your-key';
-const daptaSdk = new DaptaSdk(baseUrl, apiKey);
+const daptaSdk = new DaptaSdk(apiKey);
 
 // Execute a fetch
-daptaSdk.executeDaptaCall(
+daptaSdk.run(
     'daptaFolder/input', // Url endpoint (Required).
     'GET', // Fetch Method: GET, POST, PUT or DELETE (Required).
     { 'Authorization': 'Bearer testJWT' } // Fetch headers object (Optional). The following Headers are already included: 'Content-Type', 'Accept', 'x-api-key'.
@@ -48,25 +46,18 @@ daptaSdk.executeDaptaCall(
 
 ```typescript
 // Import DaptaSdk class
-import { DaptaSdk } from 'dapta-sdk';
+import { DaptaSdk } from "dapta-sdk";
 
 // Initialize a DaptaSdk object instance with your Dapta API base url and your api key
-const baseUrl: string = 'https://api.dapta.ai/api/';
-const apiKey: string = 'ChHIy-409fff24-ce1f-4ad2-8e48-a6f351d49292-1690388298995';
-const daptaSdk = new DaptaSdk(baseUrl, apiKey);
+const apiKey: string =
+  "ChHIy-409fff24-ce1f-4ad2-8e48-a6f351d49292-1690388298995";
+const dapta = new DaptaSdk(apiKey);
 
-daptaSdk
-  .executeDaptaCall(
-    'dapta-167-451-3/hello-dapta',
-    'GET',
-    undefined,
-    undefined,
-    undefined,
-    undefined
-  )
+dapta
+  .run("dapta-167-451-3/hello-dapta", "GET")
   .then((response) => {
     // Returns api response
-    console.log('RESPONSE: ', response);
+    console.log("RESPONSE: ", response);
   })
   .catch((error) => {
     console.error(error);
@@ -77,29 +68,30 @@ daptaSdk
 
 ```typescript
 // Import DaptaSdk class
-import { DaptaSdk } from 'dapta-sdk';
+import { DaptaSdk } from "dapta-sdk";
 
 // Initialize a DaptaSdk object instance with your Dapta API base url and your api key
-const baseUrl: string = 'https://api.dapta.ai/api/';
-const apiKey: string = 'Zmpjc-409fff24-ce1f-4ad2-8e48-a6f351d49292-a';
-const daptaSdk = new DaptaSdk(baseUrl, apiKey);
+const apiKey: string = "Zmpjc-409fff24-ce1f-4ad2-8e48-a6f351d49292-a";
+const dapta = new DaptaSdk(apiKey);
 
-daptaSdk.executeDaptaCall(
-  'dapta-167-451-3/complex-api',
-  'POST',
-  undefined,
-  {testBody: 'valueBody'},
-  {'testParamURL': 'valueParamURL'},
-  [
-    ['testQuery', 'valueQuery'],
-  ] // Only for query params you can also use {'testQuery': 'valueQuery'} or "testQuery=valueQuery"
-  ).then((response) => {
-      // Returns fetch response
-      console.log("RESPONSE: ", response)
-  }).catch((error) => {
-      console.error(error);
+dapta
+  .run(
+    "dapta-167-451-3/complex-api",
+    "POST",
+    undefined,
+    { testBody: "valueBody" },
+    { testParamURL: "valueParamURL" },
+    [["testQuery", "valueQuery"]] // Only for query params you can also use {'testQuery': 'valueQuery'} or "testQuery=valueQuery"
+  )
+  .then((response) => {
+    // Returns fetch response
+    console.log("RESPONSE: ", response);
+  })
+  .catch((error) => {
+    console.error(error);
   });
 ```
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
