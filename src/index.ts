@@ -1,3 +1,6 @@
+import fetch from 'node-fetch';
+import { Request, Headers } from 'node-fetch';
+
 export class DaptaSdk {
   apiBaseUrl: string = 'https://api.dapta.ai/api/';
   apiKey: string | undefined;
@@ -41,6 +44,7 @@ export class DaptaSdk {
       });
     }
 
+    /** @type {import('node-fetch').RequestInit} */
     let options: any = {
       method: method,
       headers: headers,
