@@ -16,7 +16,8 @@
     "dapta",
     "sdk",
     "typescript",
-    "frontend"
+    "frontend",
+    "backend"
   ],
   "author": "Dapta",
   "license": "ISC",
@@ -25,6 +26,9 @@
   },
   "homepage": "https://github.com/Dapta-Tech/dapta-sdk#readme",
   "devDependencies": {
+    "@types/node": "^20.8.7",
+    "@types/node-fetch": "^2.6.7",
+    "node-fetch": "^2.6.8",
     "typescript": "^5.2.2"
   },
   "files": [
